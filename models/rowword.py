@@ -1,7 +1,6 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String
-
-Base = declarative_base()
+from .base import Base
 
 class RowWord(Base):
     __tablename__ = "row_words"
@@ -17,3 +16,4 @@ class RowWord(Base):
     Grm = Column(String)
     NER = Column(String)
     Semantic = Column(String)
+    Lang_code = Column(String)

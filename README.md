@@ -29,8 +29,13 @@ cd parallel-corpus-api
 POSTGRES_DB=corpus_db
 POSTGRES_USER=corpus_user
 POSTGRES_PASSWORD=corpus_pw
-POSTGRES_HOST=localhost
+POSTGRES_HOST=localhost # db or localhost. 
 POSTGRES_PORT=5432
+````
+### 2.a - upgrade db
+```bash
+alembic revision --autogenerate -m "create sentence and point tables"
+alembic upgrade head
 ````
 
 ### 3. Install dependencies

@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class RowWordBase(BaseModel):
     ID: str
@@ -6,12 +7,15 @@ class RowWordBase(BaseModel):
     Word: str
     Lemma: str
     Links: str
-    Morph: str
+    # Morph: str or null
+    Morph: Optional[str]
     POS: str
     Phrase: str
     Grm: str
     NER: str
     Semantic: str
+    Lang_code: str
+
 
 class RowWordCreate(RowWordBase):
     pass
